@@ -1,0 +1,13 @@
+{
+  "name": "llm-container-starter",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh"
+  },
+  "postCreateCommand": "pip install --upgrade pip",
+  "remoteUser": "root"
+}
