@@ -5,9 +5,10 @@
   },
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  //"postCreateCommand": "poetry install",
+  "postCreateCommand": "poetry --version",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "zsh"
   },
-  "postCreateCommand": "pip install --upgrade pip",
   "remoteUser": "root"
 }

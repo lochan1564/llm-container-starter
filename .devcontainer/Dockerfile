@@ -2,13 +2,17 @@
 
 FROM python:3.11-slim
 
-# Install system tools
 RUN apt-get update && apt-get install -y \
-    git curl vim nano htop \
+    git curl vim nano htop build-essential \
     && apt-get clean
 
-# Optional: pre-create workspace folders
-# RUN mkdir -p /workspace/src /workspace/data /workspace/notebooks
+# Install Poetry
+ENV POETRY_VERSION=1.8.2
+RUN curl -sSL https://install.python-poetry.org | python3 - && \
+    ln -s ~/.local/bin/poetry /usr/local/bin/poetry
 
-# Set the working directory
+# Set working directory
 WORKDIR /workspace
+
+# Install dependencies later via postCreateCommand
+
